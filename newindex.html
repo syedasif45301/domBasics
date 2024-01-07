@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CHAI OR CODE</title>
+    <style>
+        body{
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+     const myQ=document.querySelector('.parent');
+     console.log(myQ);
+    //  console.log(myQ.children[1]);
+    //  console.log(myQ.nextElementSibling);
+    //  console.log(myQ.firstChild);
+    //  console.log(myQ.lastChild);
+     console.log(myQ.childNodes);
+
+
+     for (let index = 0; index < myQ.children.length; index++) {
+        
+        console.log(myQ.children[index].innerHTML);
+     }
+
+     myQ.children[1].style.backgroundColor="green";
+     console.log(myQ.firstElementChild);
+    //  console.log(myQ.nextElementSibling);
+    //  console.log(myQ.lastElementChild);
+     console.log(myQ.previousElementSibling);
+
+
+
+     
+     
+    </script>
+</body>
+</html>
