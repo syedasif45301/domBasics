@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJ_2 DOM</title>
+
+    <style>
+        .parent{
+            background-color: gray;
+            height:60vh;
+            width:50vw;
+            margin:5px;
+            padding:5px;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="parent">
+
+        <h1>BMI Calculator</h1>
+        <form action="">
+            <p class="pcls" id="p1">Height in CM: 
+                <input type="text">
+            </p>  <br>
+
+            <p  class="pcls" id="p2">Weight in KG: 
+                <input type="text">
+            </p>  <br>
+
+            <div id="results"></div>
+            <button>Calculate</button>
+
+            <h3 style="text-align: center;">BMI Weight Guide</h3>
+            <pre>
+                Under Weight = Less Than 18.6
+                Normal Range = 18.6 and 24.9
+                Overweight = Greater than 24.9
+            </pre>
+        </form>
+    </div>
+
+
+    <script>
+        const myForm=document.querySelector('form');
+        console.log(myForm)
+
+        myForm.addEventListener('submit',(e)=>{
+            console.log(e);
+            e.preventDefault();
+
+           const myP1=parseInt(document.querySelector('#p1').value);
+           const myP2=parseInt(document.querySelector('#p2').value);
+        const myResult=document.querySelector('#results')
+
+
+
+        if(myP1 === '' || myP1 < 0 || isNaN(myP1)){
+            myResult.innerHTML=`Please enter a valid height ${myP1}`;
+        }
+
+
+        else if(myP2 === '' || myP2 < 0 || isNaN(myP2)){
+            myResult.innerHTML=`Please enter a valid height ${myP2}`;
+        }
+
+        else{
+            const bmi=(myP2 / ((myP1*myP1) / 10000)).toFixed(2);
+
+            myResult.innerHTML = `<span>${bmi}</span>`
+        }
+
+        })
+      
+
+
+    </script>
+</body>
+</html>

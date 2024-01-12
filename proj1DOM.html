@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJ_1 DOM</title>
+    <style>
+        .button{
+            width: 50px;
+            height:50px;
+            border: 2px solid black;
+            display: inline-block;
+        }
+
+        span{
+            display: block;
+            justify-content: center;
+            margin:5px;
+            padding:5px;
+
+        }
+
+
+        #grey{
+            background-color: gray;
+        }
+
+        #red{
+            background-color: red;
+        }
+
+
+        #green{
+            background-color: green;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Spread Color Sheet</h1>
+    
+    <span class="button" id="grey"></span>
+    <span class="button" id="red"></span>
+    <span class="button" id="green"></span>
+
+
+    <h3>choose the box the change the background-color accordingly</h3>
+
+
+
+
+    <script>
+
+const Btn = document.querySelectorAll('.button');
+const body = document.querySelector('body');
+
+console.log(Btn);
+
+Btn.forEach((l)=>{
+    console.log(l);
+    l.addEventListener('click',(e)=>{
+        console.log(e);
+        console.log(e.target);
+
+        if(e.target.id==='grey'){
+            body.style.backgroundColor=e.target.id;
+        }
+        if(e.target.id==='red'){
+            body.style.backgroundColor=e.target.id;
+        }
+        if(e.target.id==='green'){
+            body.style.backgroundColor=e.target.id;
+        }
+    })
+})
+
+    </script>
+</body>
+</html>
